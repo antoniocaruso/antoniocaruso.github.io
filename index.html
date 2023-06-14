@@ -1,241 +1,105 @@
-<!doctype html>
-<html lang="it">
+<!DOCTYPE html>
+<html>
+<body>
+<script type="text/javascript">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="author" content="Antonio Caruso">
+//////////////
+/// CONFIG ///
+//////////////
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-N843R5B');</script>
-<!-- End Google Tag Manager -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css" integrity="sha256-uFVgMKfistnJAfoCUQigIl+JfUaP47GrRKjf6CTPVmw=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.min.css" integrity="sha256-4w9DunooKSr3MFXHXWyFER38WmPdm361bQS/2KUWZbU=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/styles/github.min.css" crossorigin="anonymous" title="hl-light">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis%7CLato%7CInconsolata&display=swap">
-    
-    <link rel="stylesheet" href="css/academics.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" 
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <style>
-        @import url(//fonts.googleapis.com/css?family=Lato:400,700|Merriweather|Roboto+Mono);
-        html, body, p {
-            font-family: 'Merriweather', serif;
-            font-size: 1em;
-            line-height: 1.65;
-            min-height: 100%;
-        }
-		section#news > div > div > div.col-xs-12.col-md-4 > h1 { color: rgb(153,0,0); }
-    </style>
-    <title>Antonio Mario Caruso - Profile</title>
-</head>
+var defaultLocale = 'it';
+var routing = {
+  "en": 'http://localhost:8080/en',
+  "it": 'http://localhost:8080/it'
+};
 
-<body id="top" data-spy="scroll" data-offset="70" data-target="#navbar-main">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-JK5VQDQRW3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+var enableLog = true;
 
-  gtag('config', 'G-JK5VQDQRW3');
-</script>
- 
-  <nav class="navbar navbar-expand-lg navbar-light compensate-for-scrollbar" id="navbar-main">
-    <div class="container">
-      <div class="d-none d-lg-inline-flex">
-       <a class="navbar-brand" href="/">Antonio Mario Caruso</a>
-    </div> 
-    <button type="button" class="navbar-toggler" data-toggle="collapse"
-            data-target="#navbar-content" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span><i class="fas fa-bars"></i></span>
-    </button>
-    <div class="navbar-brand-mobile-wrapper d-inline-flex d-lg-none">
-      <a class="navbar-brand" href="/">Antonio Mario Caruso</a>
-    </div> 
-    <div class="navbar-collapse main-menu-item collapse justify-content-end" id="navbar-content">
-      <ul class="navbar-nav d-md-inline-flex">
-        <li class="nav-item">
-          <a class="nav-link " href="/#navbar-main" data-target="#navbar-main"><span>Home</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/#news" data-target="#news"><span>News</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/#pubblications" data-target="#pubblications"><span>Pubblications</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/#awards" data-target="#awards"><span>Awards</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/#projects" data-target="#projects"><span>Projects</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " href="/#teaching" data-target="#teaching"><span>Teaching</span></a>
-	</li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<span class="js-widget-page d-none"></span>
-<!-- LTeX: language=it-IT -->
+/////////////////
+/// FUNCTIONS ///
+/////////////////
 
-  <section id="bio" class="home-section">
-    <div class="container">
-      <div class="row align-items-start" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <div class="col-xs-12 col-md-5">
-          <div id="profile">
-            <center>
-              <img alt="Antonio Caruso (photo)" width="200px" src="img/foto1.jpg">
-            </center>
-            <div class="portrait-title" align="left">
-              <center>
-                <h2 itemprop="name">Antonio M. Caruso</h2> 
-              </center>
-               <h3>Ricercatore in Informatica <small>(Computer Science)</small></h3>
-               <h3>Dipartimento di Matematica e Fisica 
-                '<em><a href="https://wiki2.org/en/Ennio_de_Giorgi">Ennio De Giorgi</a></em>',
-                Università del Salento, Lecce.</h3>
-              <a href="https://www.unisalento.it/people/antonio.caruso/biografia/download">(short cv)</a> <small>(non molto aggiornato)</small><p></p>
-            </div>
-            <table>
-            <tr><td><i class="fa fa-envelope fa-2x"></i></td><td><a href="mailto:antonio.caruso@unisalento.it">antonio.caruso@unisalento.it</a></td></tr>
-	    <tr><td><i class="fa fa-phone fa-2x"></i></td><td align="left">+39 0832-299046</td></tr>
-            <tr><td><i class="fas fa-map-marked fa-2x"></i></td>
-                <td align="left">Palazzo Fiorini (stanza 426), Campus Ecotekne, 73100 Lecce.</td></tr>
-            </table>
-          </div>
-        </div>
-        <div class="col-xs-12 col-md-7" itemprop="description">
-          <p>Dal 2005 lavoro come Ricercatore in Informatica presso l'Università del Salento, 
-          Dipartimento di Matematica e Fisica 'Ennio De Giorgi' e parte del gruppo 
-          <a href="\algogroup">Algoritmica@Unisalento</a> e del laboratorio Campi. In precedenza ho svolto attività
-          di post-dottorato presso il CNR-ISTI e CNR-IIT. Ho completato
-          il dottorato di ricerca in Informatica presso la scuola di dottorato Galileo Galilei di Pisa.</p> 
+function getBrowserLanguage() {
+  if (!navigator) return null;
+  if (navigator.languages && navigator.languages.length > 0) return navigator.languages[0];
+  if (navigator.userLanguage) return navigator.userLanguage;
+  if (navigator.browserLanguage) return navigator.browserLanguage;
+  return navigator.language;
+}
 
-          <p>La mia attività di ricerca ha coperto vari campi, sia teorici sia applicativi. Mi occupo di problemi che riguardano lo sviluppo di soluzioni algoritmiche in particolare in ambito distribuito e della loro integrazioni in cyber-physical systems.
-          Dopo un attività di ricerca, sviluppata durante il dottorato, nell'ambito della diagnosi di guasti in sistemi a parallelismo massiccio (<em>System Level Diagnosis</em>) mi sono occupato di algoritmi distribuiti in reti multi-hop, reti di sensori ed attualmente sistemi IoT (Internet of Things). 
+function getSubPath() {
+  var url = window.location.href;
+  var domainNameIndex = url.indexOf("//");
+  var firstSlashIndex = url.indexOf("/", domainNameIndex + 2);
+  if (firstSlashIndex === -1) return null;
+  var subPath = url.substring(firstSlashIndex + 1);
+  return subPath;
+}
 
-          Oltre alle tecniche descritte sopra, basate sull'ottimizzazione combinatorica e su modelli di programmazione matematica lineari/misti/convessi, si è passati all'uso di soluzioni data-driven con varie tecniche di apprendimento automatico.<p>
-          <p>Negli ultimi anni, lo studio di sistemi di monitoraggio ambientali basato sull'integrazione di piattaforme IoT, infratrutture intermedie (Fog Networks) e sistemi Cloud si è arricchito con soluzioni di <em>remote sensing</em> che mettono
-          in correlazione i dati raccolti dalle piattaforme IoT a terra, con varie tipologie di immagini multi-spettrali fornite dalle piattaforme satellitari.</p>
-          
-          <h5>Attività Precedenti e Soggiorni Internazionali:</h5> 
-          <ul>
-            <li><p>June 2017 – September 2017 – Visiting Professor uOttawa.</p></li>
-            <li><p>April. 2007 – Nov. 2007: Visiting Research Associate at the Network Research Lab, University of California in Los Angeles (UCLA). Invited by prof. Mario Gerla.</p></li>
-            <li><p>October 2004 – Feb. 2005: Visiting Research Associate at the Network Research Lab, University of California in Los Angeles (UCLA).</p></li>
-            <li><p>2004 : Postdoc presso l' Istituto di Scienza e Tecnologie dell’Informazione “A. Faedo”  ISTI-CNR, Pisa.</p></li>
-            <li><p>2003 : Postdoc presso l'Istituto di Informatica e Telematica IIT-CNR (Pisa).</p></li>
-            <li><p>1997 (tra Laurea e inizio Dottorato): Servizio Miliatare come Allievo Ufficiale e poi Guardiamarina presso l'Accademia Navale di Livorno.</p></li>
-          </ul>
-          
-          <h5>Incarichi Istituzionali in Ateneo/Dipartimento:</h5>
-          <ul>
-            <li>Da Gennaio 2022, rappresentante in Giunta del Dipartimento.</li>
-            <li>Da Giguno 2020, membro comitato Esperti per Ministero della Difesa, '<em>C4I, Cyber, CNC </em>'.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-    
+function getQueryParam(name) {
+  var url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
-<section id="news" class="home-section">
-<div class="container">
-    <div class="row"><div class="col-xs-12 col-md-4"><h1>Recent News</h1></div>
-                     <div class="col-xs-12 col-md-8">
-	<ul class="pd-4">
-		<li><p>21 - 23 Giugno 2023  &mdash;  Meeting 
-        <a href='http://www.idenetwork.it'>Industry Digital Evolution</a> 2023, Hotel Hilton Garden Hill, Lecce.</p></li>
-      	<li><p><strong>27 Giugno 2023 &mdash; Onorato per l'invito alla residenza in Villa Grandi Roma, da parte dell'Ambasciatrice del Canada, in occasione della visita del
-	      presidente della Camera dei Comuni del Canada.</strong></p></li>
-      	<li><p>09 - 12 Luglio 2023  &mdash; Partecipazione al  
-        <a href="https://2023.ieee-iscc.org">
-        IEEE Symposium on Computers and Communications (ICCC) 2023, Tunisi</a>, 
-        presentazione dal titolo: "<em>TEBAKA: Territorial Basic Knowledge Acquisition. An Agritech Project for Italy: Results on Self-Supervised Semantic Segmentation</em>"</p>
-      	</li>
-      	<li><p>20-22 Novembre 2023 &mdash; Partecipazione presso:  
-        <a href="http://www.techdefense.org">IEEE International Workshop on Technologies 
-          for Defense and Security</a> (TechDEFENSE 2023), membro Comitato di Programma.
-          Organizzatore <strong>Special Session</strong> su:
-          <em><a href="http://techdefense.org/special-session-9">Battlefield Operational Technology and 
-            Secure Internet of Battlefield Things</a></em>.</p>
-      	</li>
-	</ul>
-  </div></div></div>
-</section>
-
-<section id="pubblications" class="home-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <h1>Pubblications</h1>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        see my profile <i class="ai ai-google-scholar-square ai-3x"></i>
- @<a href="https://scholar.google.com/citations?user=4PSBrzIAAAAJ&hl=it">
-        Google Scholar</a>
-      </div>
-   </div>
-  </div>
-</section>
-
-<section id="awards" class="home-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <h1>Awards</h1>
-      </div>
-      <div class="col-xs-12 col-md-8">
-       <ul>
-        <li><p>June 2017 - September 2017, Ottawa University, Visiting Researcher - 
-          <a href="https://researchitaly.mur.gov.it/2023/03/22/premio-canada-italia-per-linnovazione-2023/#:~:text=L%27Ambasciata%20del%20Canada%20in,tra%20ricercatori%20e%20istituzioni%20scientifiche.">Premio Canada-Italia per l’Innovazione</a> 2017. 
-          Project Title: '<em>Privacy-Utility Trade off in Big Data for Green Smart Cities</em>'. Visiting Professor from 15 May to 16 Sep. University of Ottawa.</p></li>
-        <li><p>August 2017 - Award from Lecce Municipality - '<em>Premio Eccellenza Città di Lecce 2017</em>'.</p></li>
-        <li><p>April 2018 - Award from the City of Nicolosi (CT) - Premio per la carriera in Innovazione e Ricerca.</p></li>
-      </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="projects" class="home-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <h1>Projects</h1>
-      </div>
-      <div class="col-xs-12 col-md-8">
-      Progetti (TODO)
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="teaching" class="home-section">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-4">
-        <h1>Teaching</h1>
-      </div>
-      <div class="col-xs-12 col-md-8">
-        vedi: <a href="https://www.unisalento.it/scheda-utente/-/people/antonio.caruso/didattica">Schede Didattica presso Unisalento</a>.
-      </div>
-    </div>
-  </div>
-</section>
+function redirectToRoute(locale, subPath) {
+  if (enableLog) console.log('matching locale ' + locale + ' ...');
+  var route = routing[locale];
+  if (route != null) {
+    if (enableLog) console.log('will redirect to ' + route);
+    if (subPath) {
+      if (!route.endsWith('/')) route += '/';
+      route += subPath;
+      if (enableLog) console.log('full url will be ' + route);
+    }
+    window.location.replace(route);
+    return;
+  }
   
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  var parts = locale.split('-');
+  if (parts == null || parts.length <= 1) return;
+  
+  if (enableLog) console.log("will try to use just the language");
+  redirectToRoute(parts[0], subPath);
+}
 
+////////////////
+/// REDIRECT ///
+////////////////
+
+var locale = getQueryParam('locale');
+var saveLocale = true;
+if (enableLog) console.log('url locale: ' + locale);
+
+if (locale == null) {
+  locale = localStorage.getItem('locale');
+  if (enableLog) console.log('stored locale: ' + locale);
+  if (locale != null) saveLocale = false;
+}
+
+if (locale == null) {
+  locale = getBrowserLanguage();
+  if (enableLog) console.log('browser locale: ' + locale);
+}
+
+if (saveLocale === true) {
+  if (enableLog) console.log('storing locale: ' + locale);
+  localStorage.setItem('locale', locale);
+}
+
+if (locale == null) {
+  if (enableLog) console.log('will use default ' + defaultLocale);
+  locale = defaultLocale;
+}
+
+locale = locale.toLowerCase();
+var subPath = getSubPath();
+redirectToRoute(locale, subPath);
+</script>
 </body>
 </html>
+
