@@ -9853,7 +9853,7 @@ ul.task-list li input[type="checkbox"] {
     font-family: "Dosis", sans-serif;
     font-weight: 400;
     line-height: 1.25;
-    text-rendering:optimizeLegibility
+    text-rendering:optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10302,16 +10302,16 @@ div.alert-warning > div:first-child::before {
 }
 
 .navbar {
-    height: 90px;
+    height: 3em;
     background: #fff;
     box-shadow: 0 0.125rem 0.25rem 0 rgba(0, 0, 0, 0.11);
-    /* font-size: 13.86px; */
+    font-size: 1.2em;
     position: fixed;
     top: 0;
     right: 0;
     left: 0;
     z-index: 1030;
-    padding:0 1rem
+    padding:0 1rem;
 }
 
 .navbar .nav-item {
@@ -10320,7 +10320,7 @@ div.alert-warning > div:first-child::before {
 
 @media (max-width: 991.98px) {
     .navbar {
-        height:70px
+        height: 3em;
     }
 
     .navbar .navbar-nav-scroll {
